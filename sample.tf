@@ -21,3 +21,15 @@ variable "abc1" {
 output "abc1" {
   value = "Value of abc1 = ${var.abc1}"
 }
+
+variable "samplex" {
+  default = {
+    string  = "Hello",
+    number  = 100,
+    boolean = true
+  }
+}
+
+output "samplex" {
+  value = "Value 1 = ${var.samplex[0]}, Value 3 = ${var.samplex[2]}"
+}
