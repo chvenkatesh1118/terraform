@@ -31,5 +31,5 @@ variable "samplex" {
 }
 
 output "samplex" {
-  value = "Value 1 = ${var.samplex[0]}, Value 3 = ${var.samplex[2]}"
+  value = "Value 1 = ${var.samplex[1]}, Value 3 = ${var.samplex[2]}"
 }
