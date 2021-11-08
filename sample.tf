@@ -8,5 +8,9 @@ output "boolean" {
   value = true
 }
 variable "abc" {
-  default = 200
+  default = 580
+}
+
+output "print" {
+  value = "a= ${abc}"
 }
