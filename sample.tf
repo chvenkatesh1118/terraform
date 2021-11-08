@@ -14,12 +14,12 @@ output "showstring" {
   value = var.chanti
 
 }
-variable "abc1" {
-  default = 200
+variable "num" {
+  default = 7013797108
 }
 
-output "abc1" {
-  value = "Value of abc1 = ${var.abc1}"
+output "mynumber" {
+  value = "my number = ${var.num}"
 }
 
 variable "sampley" {
