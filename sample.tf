@@ -1,5 +1,5 @@
 output "abc" {
-  value = "200"
+  value = 200
 }
 output "number" {
   value = 200
@@ -19,7 +19,7 @@ variable "num" {
 }
 
 output "mynumber" {
-  value = "my number = ${var.num}"
+  value = "mynumber = ${var.num}"
 }
 
 variable "sampley" {
