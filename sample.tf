@@ -1,4 +1,4 @@
-output "abc" {
+output "abc1" {
   value = "200"
 }
 output "number" {
@@ -8,9 +8,10 @@ output "boolean" {
   value = true
 }
 variable "abc" {
-  default = 580
+  default = "100"
 }
 
-output "print" {
-  value = "a= ${ abc }"
+
+output "abc" {
+  value = var.abc
 }
