@@ -12,5 +12,5 @@ variable "abc" {
 }
 
 output "print" {
-  value = "a= ${abc}"
+  value = "a= ${ abc }"
 }
