@@ -1,3 +1,3 @@
-outuput "abc" {
+output "abc" {
   value = "chanti"
 }
