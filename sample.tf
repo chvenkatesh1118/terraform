@@ -1,0 +1,3 @@
+outuput "abc" {
+  value = "chanti"
+}
