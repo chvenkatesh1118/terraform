@@ -5,5 +5,5 @@ output "number" {
   value = 200
 }
 output "boolean" {
-  value = ""true"
+  value = true
 }
