@@ -7,11 +7,10 @@ output "number" {
 output "boolean" {
   value = true
 }
-variable "abc" {
-  default = "100"
+variable "chant" {
+  default = "checking string"
 }
+output "showstring" {
+  value = var.chant
 
-
-output "abc" {
-  value = var.abc
 }
