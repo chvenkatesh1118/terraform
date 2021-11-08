@@ -32,5 +32,5 @@ variable "chanti1" {
 }
 
 output "details" {
-  value = "age ={$x}"
+  value = "age = ${var.chanti1["x"]}"
 }
