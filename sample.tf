@@ -22,7 +22,7 @@ output "abc1" {
   value = "Value of abc1 = ${var.abc1}"
 }
 
-variable "samplex" {
+variable "sampley" {
   default = {
     string  = "Hello",
     number  = 100,
@@ -30,6 +30,10 @@ variable "samplex" {
   }
 }
 
-output "samplex" {
-  value = "Value 1 = ${var.samplex[1]}, Value 3 = ${var.samplex[2]}"
+#output "sampley" {
+#  value = "Value 1 = ${var.samplex[1]}, Value 3 = ${var.samplex[2]}"
+#}
+
+output "sampley" {
+  value = "String = ${var.sampley["string"]}, Number = ${var.sampley["number"]}, Boolean = ${var.sampley["boolean"]}"
 }
