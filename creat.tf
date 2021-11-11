@@ -1,19 +1,19 @@
 provider "aws" {
   region = "us-east-1"
 }
-resource "aws_security_group" "allow_tls" {
-  name        = "allow_tls"
-  description = "Allow TLS inbound traffic"
-  vpc_id      = aws_vpc.main.id
+resource "aws_security_group" "s_group" {
+  name        = "s_group"
+  description = "s_group"
+
 
   ingress = [
     {
       description      = "TLS from VPC"
-      from_port        = 443
-      to_port          = 443
+      from_port        = 22
+      to_port          = 22
       protocol         = "tcp"
-      cidr_blocks      = [aws_vpc.main.cidr_block]
-      ipv6_cidr_blocks = [aws_vpc.main.ipv6_cidr_block]
+      cidr_blocks      = ["0.0.0.0/0"]
+      ipv6_cidr_blocks = []
     }
   ]
 
@@ -23,18 +23,19 @@ resource "aws_security_group" "allow_tls" {
       to_port          = 0
       protocol         = "-1"
       cidr_blocks      = ["0.0.0.0/0"]
-      ipv6_cidr_blocks = ["::/0"]
+      ipv6_cidr_blocks = []
     }
   ]
 
   tags = {
-    Name = "allow_tls"
+    Name = "s_group"
   }
 }
 
 resource "aws_instance" "frontend" {
   ami           = "ami-077fb3e62ddf0fa9a"
   instance_type = "t2.micro"
+  vpc_security_group_ids = [aws_security_group.s_group.id]
 
   tags = {
     Name = "frontend"
