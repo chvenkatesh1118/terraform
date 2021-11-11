@@ -1,14 +1,14 @@
 provider "aws" {
   region = "us-east-1"
 }
-resource "aws_security_group" "s_group" {
+resource "aws_security_group"  "s_group"  {
   name        = "s_group"
   description = "s_group"
 
 
   ingress = [
     {
-      description      = "TLS from VPC"
+      description      = "ingress"
       from_port        = 22
       to_port          = 22
       protocol         = "tcp"
@@ -27,11 +27,11 @@ resource "aws_security_group" "s_group" {
       to_port          = 0
       protocol         = "-1"
       cidr_blocks      = ["0.0.0.0/0"]
-      ipv6_cidr_blocks = []
+      ipv6_cidr_blocks = ["::/0"]
       security_groups  = []
       prefix_list_ids  = []
       self             = false
-      description = "s_group"
+      description      = "egress"
 
     }
   ]
