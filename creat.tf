@@ -17,6 +17,7 @@ resource "aws_security_group" "s_group" {
       prefix_list_id   = []
       security_groups  = []
       self             = false
+      description = "s_group"
     }
   ]
 
@@ -30,6 +31,7 @@ resource "aws_security_group" "s_group" {
       security_groups  = []
       prefix_list_ids  = []
       self             = false
+      description = "s_group"
 
     }
   ]
