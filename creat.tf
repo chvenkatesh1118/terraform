@@ -40,6 +40,9 @@ resource "aws_security_group" "s_group"  {
     Name = "s_group"
   }
 }
+output "SGID" {
+  value = aws_security_group.s_group.id
+}
 
 resource "aws_instance"  "frontend"  {
   ami           = "ami-077fb3e62ddf0fa9a"
