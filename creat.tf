@@ -14,7 +14,7 @@ resource "aws_security_group" "s_group"  {
       protocol         = "tcp"
       cidr_blocks      = ["0.0.0.0/0"]
       ipv6_cidr_blocks = []
-      prefix_list_id   = []
+      prefix_list_ids  = []
       security_groups  = []
       self             = false
 
@@ -29,7 +29,7 @@ resource "aws_security_group" "s_group"  {
       cidr_blocks      = ["0.0.0.0/0"]
       ipv6_cidr_blocks = ["::/0"]
       security_groups  = []
-      prefix_list_id  = []
+      prefix_list_ids  = []
       self             = false
       description      = "egress"
 
