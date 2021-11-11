@@ -1,46 +1,46 @@
 provider "aws" {
   region = "us-east-1"
 }
-resource "aws_security_group" "allow_sample" {
+resource "aws_security_group" "allow_sample"  {
   name        = "allow_sample"
-  description = "Allow sample traffic"
+  description = "allow_sample"
+
 
   ingress = [
     {
-      description      = "TLS from VPC"
+      description      = "ingress"
       from_port        = 22
       to_port          = 22
       protocol         = "tcp"
       cidr_blocks      = ["0.0.0.0/0"]
       ipv6_cidr_blocks = []
-      prefix_list_ids  = []
+      prefix_list_id   = []
       security_groups  = []
       self             = false
+
     }
   ]
 
   egress = [
     {
-      description      = "egress"
       from_port        = 0
       to_port          = 0
       protocol         = "-1"
       cidr_blocks      = ["0.0.0.0/0"]
       ipv6_cidr_blocks = ["::/0"]
-      prefix_list_ids  = []
       security_groups  = []
+      prefix_list_ids  = []
       self             = false
+      description      = "egress"
+
     }
   ]
 
   tags = {
-    Name = "allow_sample"
+    Name = "s_group"
   }
 }
 
-output "SGID" {
-  value = aws_security_group.allow_sample.id
-}
 resource "aws_instance" "frontend" {
   ami           = "ami-077fb3e62ddf0fa9a"
   instance_type = "t2.micro"
