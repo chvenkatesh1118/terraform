@@ -29,7 +29,7 @@ resource "aws_security_group" "s_group"  {
       cidr_blocks      = ["0.0.0.0/0"]
       ipv6_cidr_blocks = ["::/0"]
       security_groups  = []
-      prefix_list_ids  = []
+      prefix_list_id  = []
       self             = false
       description      = "egress"
 
