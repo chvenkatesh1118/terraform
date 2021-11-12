@@ -1,9 +1,8 @@
-provider "aws" {
-  region = "us-east-1"
-}
-resource "aws" "name"  {
-  default = "name"
+
+variable "name" {
+
+  default = "100"
 }
 output "name" {
-  value = "name"
+  value = var.name
 }
