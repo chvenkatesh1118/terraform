@@ -11,3 +11,8 @@
 ##    Name = "frontend"
 ##  }
 ##}
+
+variable "name" {
+
+  default = "100"
+}
