@@ -8,5 +8,5 @@
 
   systemctl enable jenkins
   systemctl start jenkins
-  cd /ec/log/jenkins
+  cd /var/log/jenkins
   cat jenkins.log
