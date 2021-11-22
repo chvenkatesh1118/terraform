@@ -39,5 +39,3 @@
    else
     echo epel not installed 
     fi 
-  cd /var/log/jenkins
-  cat jenkins.log
