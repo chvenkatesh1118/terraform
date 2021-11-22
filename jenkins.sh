@@ -38,4 +38,9 @@
     echo epel instald
    else
     echo epel not installed 
+<<<<<<< HEAD
     fi
+=======
+    fi 
+  
+>>>>>>> cc16491c90ac75b34f474a4e635a9bc2673722d0
