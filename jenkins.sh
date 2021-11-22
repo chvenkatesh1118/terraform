@@ -15,29 +15,29 @@
     echo epel instald
    else
     echo epel not installed 
-    if 
+    fi 
 
   yum install jenkins -y >> /dev/log1
-   if   [ &1 -eq 0 ] 
+    if   [ &1 -eq 0 ] 
    then 
     echo epel instald
    else
     echo epel not installed 
-    if 
+    fi 
 
   systemctl enable jenkins
-   if   [ &1 -eq 0 ] 
+    if   [ &1 -eq 0 ] 
    then 
     echo epel instald
    else
     echo epel not installed 
-    if 
+    fi 
   systemctl start jenkins
    if   [ &1 -eq 0 ] 
    then 
     echo epel instald
    else
     echo epel not installed 
-    if 
+    fi 
   cd /var/log/jenkins
   cat jenkins.log
