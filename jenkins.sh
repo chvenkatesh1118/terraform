@@ -3,31 +3,41 @@
  rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
 
   yum install epel-release >> /dev/log1
-   if [&1 -eq 0] then 
+   if   [ &1 -eq 0 ] 
+   then 
     echo epel instald
    else
-    echo epel not installed  
+    echo epel not installed 
+    if 
   yum install java-11-openjdk-devel -y  >> /dev/log1
-   if [&1 -eq 0] then 
-    echo java instald
+   if   [ &1 -eq 0 ] 
+   then 
+    echo epel instald
    else
-    echo java not installed
+    echo epel not installed 
+    if 
 
   yum install jenkins -y >> /dev/log1
-   if [&1 -eq 0] then 
-    echo jenkins instald
+   if   [ &1 -eq 0 ] 
+   then 
+    echo epel instald
    else
-    echo jenkins not installed
+    echo epel not installed 
+    if 
 
   systemctl enable jenkins
-   if [&1 -eq 0] then 
-    echo jenkins enabled
+   if   [ &1 -eq 0 ] 
+   then 
+    echo epel instald
    else
-    echo jenkins enabled not
+    echo epel not installed 
+    if 
   systemctl start jenkins
-   if [&1 -eq 0] then 
-    echo jenkins started
+   if   [ &1 -eq 0 ] 
+   then 
+    echo epel instald
    else
-    echo jenkins started not
+    echo epel not installed 
+    if 
   cd /var/log/jenkins
   cat jenkins.log
