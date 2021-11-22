@@ -38,4 +38,4 @@
     echo epel instald
    else
     echo epel not installed 
-    fi 
+    fi
