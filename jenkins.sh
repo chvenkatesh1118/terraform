@@ -1,42 +1,25 @@
 #!/bin/bash
- wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo --no-check-certificate
- rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+ wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo --no-check-certificate >> /dev/log1
+   echo jenkins downloaded
+ rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key >> /dev/log1
+   echo key downloaded
 
   yum install epel-release >> /dev/log1
-   if   [ &1 -eq 0 ] 
-   then 
-    echo epel instald
-   else
-    echo epel not installed 
-    if 
+   echo epel installed
+
   yum install java-11-openjdk-devel -y  >> /dev/log1
-   if   [ &1 -eq 0 ] 
-   then 
-    echo epel instald
-   else
-    echo epel not installed 
-    fi 
+   echo java installed
+
 
   yum install jenkins -y >> /dev/log1
-    if   [ &1 -eq 0 ] 
-   then 
-    echo epel instald
-   else
-    echo epel not installed 
-    fi 
+   echo jenkins installed
+
 
   systemctl enable jenkins
-    if   [ &1 -eq 0 ] 
-   then 
-    echo epel instald
-   else
-    echo epel not installed 
-    fi 
+  echo jenkins enabled
+
   systemctl start jenkins
-   if   [ &1 -eq 0 ] 
-   then 
-    echo epel instald
-   else
-    echo epel not installed 
+
+    echo jenkins started
 
 
