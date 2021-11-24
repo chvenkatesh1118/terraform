@@ -21,5 +21,6 @@
   systemctl start jenkins
 
     echo jenkins started
+     cat /var/lib/jenkins/secrets/initialAdminPassword
 
 
