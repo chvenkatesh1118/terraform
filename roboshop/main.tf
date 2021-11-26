@@ -4,7 +4,7 @@ provider "aws" {
 
 resource "aws_spot_instance_request" "cheap_worker" {
   count = length(var.components)
-  ami       = "ami-1234"
+  ami       = "ami-0eb5f3f64b10d3e0e"
   instance_type = "t3.micro"
   vpc_security_group_ids = ["sg-0a45fd04183d267bd"]
   wait_for_fulfillment = true
