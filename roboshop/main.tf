@@ -2,16 +2,6 @@ provider "aws" {
   region = "us-east-1"
 }
 
-#resource "aws_spot_instance_request" "cheap_worker" {
-#  count = length(var.components)
-#  ami       = "ami-0eb5f3f64b10d3e0e"
-#  instance_type = "t2.micro"
-#  vpc_security_group_ids = ["sg-0a45fd04183d267bd"]
-#  wait_for_fulfillment = true
-#  tags = {
-#    Name = element(var.components,count.index )
-#  }
-#}
 
 resource "aws_instance" "instance" {
   ami           = "ami-0eb5f3f64b10d3e0e"
@@ -44,6 +34,3 @@ data "aws_ami" "ami" {
 
  }
 
-#locals {
-#  COMP-NAME = element(var.components, count.index)
-#}
