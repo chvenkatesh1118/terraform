@@ -17,21 +17,7 @@ resource "aws_ec2_tag" "tags" {
   resource_id = element(aws_spot_instance_request.cheap_worker.*.spot_instance_id, count.index )
   value       = element(var.components, count.index)
 }
-resource "null_resource" "ansible" {
-  count = length(var.components)
-  provisioner "remote-exec" {
-    host = element(aws_spot_instance_request.cheap_worker.*.private_ip, count.index )
-    user = "centos"
-    password = "DevOps321"
 
-  }
-  inline = [
-    "sudo yum install python3-pip -y",
-    "sudo pip3 install pip --upgrade",
-    "sudo pip3 install ansible",
-    "ansible-pull -U https://DevOps-Batches@dev.azure.com/DevOps-Batches/DevOps60/_git/ansible roboshop-pull.yml -e COMPONENT=${element(var.components, count.index)} -e ENV=dev"
-  ]
-}
 
 data "aws_ami" "ami" {
   most_recent = true
@@ -44,6 +30,6 @@ data "aws_ami" "ami" {
 
  }
 
-locals {
-  COMP-NAME = element(var.components, count.index)
-}
+#locals {
+#  COMP-NAME = element(var.components, count.index)
+#}
