@@ -7,7 +7,6 @@ resource "aws_instance" "instance" {
   ami           = "ami-0eb5f3f64b10d3e0e"
   count = length(var.components)
   instance_type = "t2.micro"
-  wait_for_fulfillment = true
   vpc_security_group_ids = ["sg-0a45fd04183d267bd"]
 
   tags = {
