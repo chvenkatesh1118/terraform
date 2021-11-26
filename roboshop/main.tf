@@ -13,6 +13,7 @@ resource "aws_spot_instance_request" "cheap_worker" {
   }
 }
 resource "aws_ec2_tag" "tags" {
+  count = length(var.components)
   key         = "name"
   resource_id = element(aws_spot_instance_request.cheap_worker.*.spot_instance_id, count.index)
   value       = element(var.components, count.index)
