@@ -28,7 +28,7 @@ data "aws_ami" "ami" {
 }
 
  variable "components" {
-   default = ["frontend", "mongodb", "catalogue", "cart", "user", "redis", "mysql", "shipping", "rabbitmq", "payment"]
+   default = ["frontend", "mongodb" ]
 
  }
 
