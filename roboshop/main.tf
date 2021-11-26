@@ -9,12 +9,12 @@ resource "aws_spot_instance_request" "cheap_worker" {
   vpc_security_group_ids = ["sg-0a45fd04183d267bd"]
   wait_for_fulfillment = true
   tags = {
-    Name = element(var.components, count.index )
+    Name = element(var.components, count.index)
   }
 }
 resource "aws_ec2_tag" "tags" {
   key         = "name"
-  resource_id = element(aws_spot_instance_request.cheap_worker.*.spot_instance_id, count.index )
+  resource_id = element(aws_spot_instance_request.cheap_worker.*.spot_instance_id, count.index)
   value       = element(var.components, count.index)
 }
 
