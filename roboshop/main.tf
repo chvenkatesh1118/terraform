@@ -5,7 +5,7 @@ provider "aws" {
 resource "aws_spot_instance_request" "cheap_worker" {
   count = length(var.components)
   ami       = "ami-0eb5f3f64b10d3e0e"
-  instance_type = "t3.micro"
+  instance_type = "t2.micro"
   vpc_security_group_ids = ["sg-0a45fd04183d267bd"]
   wait_for_fulfillment = true
   tags = {
@@ -17,6 +17,7 @@ resource "aws_ec2_tag" "tags" {
   key         = "name"
   resource_id = element(aws_spot_instance_request.cheap_worker.*.spot_instance_id, count.index)
   value       = element(var.components, count.index)
+  Name = element(var.components, count.index)
 }
 
 
