@@ -45,3 +45,10 @@ output "public_ip" {
     Name = "chanti"
   }
 }
+
+resource "aws_ec2_tag" "tags" {
+  count = "1"
+  resource_id = aws_instance.mahi.*.private_ip
+  key         = "Name"
+  value       = "1"
+}
