@@ -37,13 +37,14 @@ provider "aws" {
 resource "aws_instance" "mahi" {
   ami = "ami-0855cab4944392d0a"
   instance_type = "t2.micro"
+  tags = {
+    Name = "chanti"
+  }
 }
 output "public_ip" {
   value = "aws_instance.mahi.public_ip"
 
-  tags = {
-    Name = "chanti"
-  }
+
 }
 
 resource "aws_ec2_tag" "tags" {
