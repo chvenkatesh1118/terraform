@@ -40,7 +40,8 @@ resource "aws_instance" "mahi" {
 }
 output "public_ip" {
   value = "aws_instance.mahi.public_ip"
-}
-tags = {
-  Name = "chanti"
+
+  tags = {
+    Name = "chanti"
+  }
 }
