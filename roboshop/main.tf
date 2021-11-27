@@ -41,9 +41,6 @@ resource "aws_instance" "mahi" {
 output "public_ip" {
   value = "aws_instance.mahi.public_ip"
 }
-resource "aws_ec2_tag" "tag" {
-  key         = "Name"
-  resource_id = "aws_instance.mahi.*.instance_id"
-  value       = "1"
+tags = {
   Name = "chanti"
 }
