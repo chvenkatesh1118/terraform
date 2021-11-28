@@ -10,3 +10,5 @@ aws configure set aws_access_key_id AKIAQKD7AZXCTY3N2JAD; aws configure set aws_
   if [ $? -eq 0 ]; then
     echo -e "\e[31m SUCCESS\e[0m"
   fi
+
+
