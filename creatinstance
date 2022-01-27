@@ -12,7 +12,3 @@ resource "aws_instance"  "frontend"  {
   }
 }
 
-variable "name" {
-
-  default = "100"
-}
