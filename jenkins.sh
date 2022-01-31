@@ -1,4 +1,8 @@
-!/bin/bash
+!#/bin/bash
+
+sudo yum install -y ca-certificates >> /dev/log1
+echo certificates installed
+
  wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo --no-check-certificate >> /dev/log1
    echo jenkins downloaded
 
@@ -24,5 +28,6 @@
 
     echo jenkins started
      cat /var/lib/jenkins/secrets/initialAdminPassword
+     if
 
 
