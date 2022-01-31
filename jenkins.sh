@@ -27,7 +27,8 @@ echo ca-certificates updated
   systemctl start jenkins
 
     echo jenkins started
-     cat /var/lib/jenkins/secrets/initialAdminPassword
-     if
+    cd /var/jenkins/secrets
+     cat initialAdminPassword
+
 
 
