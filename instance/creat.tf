@@ -5,7 +5,7 @@ resource "aws_instance" "frontend" {
     subnet_id   =  "subnet-0f42b250c3cf1d75c"
     vpc_security_group_ids = aws_security_group.newsg.id
    tags = {
-      Name = frontend
+      Name = frontend1
     }
   }
 
