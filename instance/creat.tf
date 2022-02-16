@@ -5,6 +5,6 @@ resource "aws_instance" "frontend" {
     subnet_id   = "subnet-0f42b250c3cf1d75c"
     vpc_security_group_ids = "sgr-07d38fac622e24c40"
    tags = {
-      Name = var.NAME
+      Name = frontend
     }
   }
