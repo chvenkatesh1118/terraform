@@ -2,7 +2,7 @@
 #  region = "us-east-1"
 #}
 ##
-##
+
 ##resource "aws_instance" "instance" {
 ##  ami           = "ami-0eb5f3f64b10d3e0e"
 ##  count = length(var.components)
