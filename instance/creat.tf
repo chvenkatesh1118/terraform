@@ -38,4 +38,6 @@ resource "aws_security_group" "newsg" {
   }
 }
 
-provide
+provider "aws" {
+  region = "us-east-1"
+}
