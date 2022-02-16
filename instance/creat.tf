@@ -1,3 +1,8 @@
+provider "aws" {
+  region = "us-east-1"
+}
+
+
 resource "aws_instance" "frontend" {
    ami           = "ami-0d997c5f64a74852c"
    instance_type  = "t2.micro"
@@ -38,6 +43,3 @@ resource "aws_security_group" "newsg" {
   }
 }
 
-provider "aws" {
-  region = "us-east-1"
-}
