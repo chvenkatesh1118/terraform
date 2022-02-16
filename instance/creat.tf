@@ -1,8 +1,8 @@
-resource "aws_instance" "instance" {
+resource "aws_instance" "frontend" {
    ami           = "ami-0d997c5f64a74852c"
-   instance_type = "t2.micro"
-   vpc_id            = "vpc-0bf57a4f41c708816"
-    subnet_id   = "subnet-0f42b250c3cf1d75c"
+   instance_type  = "t2.micro"
+    vpc_id            = "vpc-0bf57a4f41c708816"
+    subnet_id   =  "subnet-0f42b250c3cf1d75c"
     vpc_security_group_ids = aws_security_group.newsg.id
    tags = {
       Name = frontend
@@ -11,9 +11,9 @@ resource "aws_instance" "instance" {
 
 
 resource "aws_security_group" "newsg" {
-  name        = "allow_tls"
+  name        = "newsg"
   description = "Allow TLS inbound traffic"
-  vpc_id      = aws_vpc.main.id
+  vpc_id      = "vpc-0bf57a4f41c708816"
 
   ingress {
     description      = "TLS from VPC"
@@ -37,3 +37,5 @@ resource "aws_security_group" "newsg" {
     Name = "newsg"
   }
 }
+
+provide
