@@ -1,4 +1,4 @@
-resource "aws_instance" "frontend" {
+resource "aws_instance" "instance" {
    ami           = "ami-0d997c5f64a74852c"
    instance_type = "t2.micro"
    vpc_id            = "vpc-0bf57a4f41c708816"
