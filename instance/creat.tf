@@ -8,7 +8,7 @@ resource "aws_instance" "frontend" {
    instance_type  = "t2.micro"
    subnet_id   =  "subnet-0f42b250c3cf1d75c"
    vpc_security_group_ids = "sg-03439c9546a230549"
-   count = index{var.COMPONENTS}
+   count = var.COMPONENTS.index
    tags = {
       Name = var.COMPONENTS
     }
