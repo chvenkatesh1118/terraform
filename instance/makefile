@@ -1,7 +1,7 @@
 
 creat:
-	@terraform init
+	@terraform init -backend-config=chanti/terraform.statefile
 	@terraform plan
 destroy:
-	@terraform init
+	@terraform init -backend-config=chanti/terraform.statefile
 	@terraform destroy
