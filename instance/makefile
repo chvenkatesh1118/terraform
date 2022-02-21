@@ -1,5 +1,5 @@
 
-	craet:
+	creat:
 
 	@terraforminit
 	@terraform plan -auto-approve
