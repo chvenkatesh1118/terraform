@@ -3,11 +3,11 @@ provider "aws" {
 }
 
 
-resource "aws_instance" "frontend" {
+resource "aws_instance" "instance" {
    ami           = "i-08f0aa11b0a26ef7a"
    instance_type  = "t2.micro"
    subnet_id   =  "subnet-0f42b250c3cf1d75c"
-   vpc_security_group_ids = "sg-03439c9546a230549"
+
    count = var.COMPONENTS.index
    tags = {
       Name = var.COMPONENTS
