@@ -1,9 +1,7 @@
+
 creat:
-
-	@terraforminit
-	@terraform plan -auto-approve
-
+	@terraform init
+	@terraform plan
 destroy:
-
-         @terraform init
-         @terraform destroy -auto-approve
+	@terraform init
+	@terraform destroy
