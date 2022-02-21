@@ -3,7 +3,7 @@
 craet:
 
         @terraform init
-        @terraform apply -auto-approve
+        @terraform plan -auto-approve
 
  destroy:
 
