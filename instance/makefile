@@ -1,11 +1,10 @@
 
+	craet:
 
-craet:
+	@terraforminit
+	@terraform plan -auto-approve
 
-        @terraform init
-        @terraform plan -auto-approve
-
- destroy:
+	destroy:
 
          @terraform init
          @terraform destroy -auto-approve
