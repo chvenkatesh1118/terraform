@@ -1,1 +1,1 @@
-COMPONENTS = "fend,db"
+COMPONENTS = "fend,db,cat"

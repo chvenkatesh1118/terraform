@@ -1,7 +1,9 @@
+clean:
+	@rm -rf .terraform
+creat: clean
+  @terraform init backend-config=chanti/terraform.tfstate
+  @terraform apply -auto-approve
 
-creat:
-	@terraform init -backend-config=chanti/terraform.statefile
-	@terraform plan
 destroy:
-	@terraform init -backend-config=chanti/terraform.statefile
-	@terraform destroy
+   @terraform init
+   @terraform destroy -auto-approve
