@@ -29,7 +29,7 @@
 ##}
 ##
 ## variable "components" {
-##   default = ["frontend", "mongodb" ]
+##   default = ["Dockerfile", "mongodb" ]
 ##
 ## }
 #
