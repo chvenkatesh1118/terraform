@@ -1,4 +1,4 @@
-resource "aws_iam_role" "role" {
+resource "aws_iam_role" "chantiecsrole" {
   name = "ecs-role"
 
   assume_role_policy = <<EOF
@@ -39,6 +39,6 @@ resource "aws_iam_policy" "policy" {
 }
 
 resource "aws_iam_role_policy_attachment" "test-attach" {
-  role       = aws_iam_role.role.name
+  role       = aws_iam_role.chantiecsrole.name
   policy_arn = aws_iam_policy.policy.arn
 }
