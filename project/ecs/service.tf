@@ -4,7 +4,7 @@ resource "aws_ecs_service" "ecsservice" {
   task_definition = aws_ecs_task_definition.taskdef.arn
   desired_count   = 1
   iam_role        = aws_iam_role.chantiecsrole.arn
-  depends_on      = [aws_iam_role_policy.foo]
+#  depends_on      = [aws_role_policy.foo]
 
   ordered_placement_strategy {
     type  = "binpack"
