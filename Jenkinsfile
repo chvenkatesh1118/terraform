@@ -17,6 +17,17 @@ pipeline {
             }
         }
 }
+
+    stage(destroy){
+     when {
+           expression { params.terraformwork == 'destroy_infra' }
+                 }
+            steps {
+               echo "destroy_infra"
+            }
+        }
+}
+
 }
 
 //     when {
