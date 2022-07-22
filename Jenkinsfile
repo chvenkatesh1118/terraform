@@ -17,6 +17,9 @@ pipeline {
                    }
             steps {
             echo "creat_infra"
+            }
+            }
+        stage(destroy) {
 
          when {
                expression { params.terraformwork == 'destroy_infra' }
