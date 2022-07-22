@@ -19,7 +19,7 @@ pipeline {
             echo "creat_infra"
 
          when {
-               expression { params.terraformwork == 'creat_infra' }
+               expression { params.terraformwork == 'destroy_infra' }
                 }
               steps{
               echo "destroy_infra"
