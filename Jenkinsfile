@@ -26,7 +26,7 @@ pipeline {
                echo "destroy_infra"
             }
         }
-}
+
 
 }
 
