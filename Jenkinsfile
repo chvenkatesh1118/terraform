@@ -25,7 +25,7 @@ pipeline {
                    echo "destroy_infra"
                 }
             }
-        }
+
 }
 //  stages {
 //    stage('vpc'){
