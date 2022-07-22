@@ -10,12 +10,20 @@ pipeline {
 
 
     stages {
-     when {
-      expression { params.terraformwork == 'creat_infra' }
-           }
+
     stage(creat){
+        when {
+              expression { params.terraformwork == 'creat_infra' }
+                   }
             steps {
             echo "creat_infra"
+
+         when {
+               expression { params.terraformwork == 'creat_infra' }
+                }
+              steps{
+              echo "destroy_infra"
+              }
             }
        }
     }
