@@ -38,7 +38,8 @@ resource "aws_ecs_capacity_provider" "EC2" {
 
 
 resource "aws_autoscaling_group" "autoscale" {
-
+  max_size = 1
+  min_size = 1
   tag {
     key                 = "AmazonECSManaged"
     value               = true
