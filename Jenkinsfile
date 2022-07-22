@@ -31,7 +31,7 @@ pipeline {
               steps{
               echo "destroying_infra"
               sh ''
-              sh 'cd project/ecs && terraform destroy -auto-approve'
+              sh 'terraform destroy -auto-approve'
               }
             }
        }
