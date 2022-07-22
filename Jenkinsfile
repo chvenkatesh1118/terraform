@@ -7,6 +7,7 @@ pipeline {
             description: 'terraformwork')
 
     }
+    stages {
      when {
            expression { params.terraformwork == 'creat_infra' }
                  }
@@ -15,7 +16,7 @@ pipeline {
                echo "creat_infra"
             }
         }
-    }
+
 
     when {
            expression { params.terraformwork == 'destroy_infra' }
