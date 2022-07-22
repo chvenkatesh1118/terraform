@@ -17,7 +17,7 @@ pipeline {
                    }
             steps {
             echo "creating_infra"
-            sh 'cd project'
+            sh 'cd project/ecr'
             sh 'terraform init'
             sh 'terraform plan'
             sh 'terraform apply -auto-approve'
