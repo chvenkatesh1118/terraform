@@ -16,7 +16,11 @@ pipeline {
               expression { params.terraformwork == 'creat_infra' }
                    }
             steps {
-            echo "creat_infra"
+            echo "creating_infra"
+            sh 'cd project'
+            sh 'terraform init'
+            sh 'terraform plan'
+            sh 'terraform apply -auto-approve'
             }
             }
         stage(destroy) {
@@ -25,7 +29,7 @@ pipeline {
                expression { params.terraformwork == 'destroy_infra' }
                 }
               steps{
-              echo "destroy_infra"
+              echo "destroying_infra"
               }
             }
        }
