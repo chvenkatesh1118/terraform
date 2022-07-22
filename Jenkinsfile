@@ -8,24 +8,24 @@ pipeline {
 
     }
     stages {
+    stage(creat){
      when {
            expression { params.terraformwork == 'creat_infra' }
                  }
-        stage('Example') {
             steps {
                echo "creat_infra"
             }
         }
 
 
-    when {
-           expression { params.terraformwork == 'destroy_infra' }
-                     }
-           stage('Example') {
-                steps {
-                   echo "destroy_infra"
-                }
-            }
-
-   }
- }
+//     when {
+//            expression { params.terraformwork == 'destroy_infra' }
+//                      }
+//            stage('Example') {
+//                 steps {
+//                    echo "destroy_infra"
+//                 }
+//             }
+//
+//    }
+//  }
