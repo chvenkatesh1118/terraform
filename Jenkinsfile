@@ -13,15 +13,21 @@ pipeline {
            expression { params.terraformwork == 'creat_infra' }
                  }
             steps {
-               echo "creat_infra"
-            }
-            when {
-                  expression { params.terraformwork == 'destroy_infra' }
-                        }
 
-             steps {
-                           echo "destroy_infra"
-                        }
+            when {
+                       expression { params.terraformwork == 'creat_infra' }
+                             }
+               echo "creat_infra"
+
+               when {
+                          expression { params.terraformwork == 'destroy_infra' }
+                                }
+
+                                echo "destroy_infra"
+            }
+
+
+
         }
 }
 }
