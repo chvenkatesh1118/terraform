@@ -27,45 +27,5 @@ pipeline {
                 }
             }
 
-}
-//  stages {
-//    stage('vpc'){
-//     steps{
-//      sh'cd project/vpc'
-//      sh'terraform init'
-//      sh'terraform plan'
-//      sh'terraform apply '
-//
-//     }
-//    }
-//  }
-//
-//    stage('vpc'){
-//      steps{
-//       sh'cd project/iam'
-//       sh'terraform init'
-//       sh'terraform plan'
-//       sh'terraform apply '
-//
-//      }
-//     }
-//
-//    stage('vpc'){
-//      steps{
-//       sh'cd project/ecr'
-//       sh'terraform init'
-//       sh'terraform plan'
-//       sh'terraform apply '
-//
-//      }
-//     }
-//
-//    stage('vpc'){
-//      steps{
-//       sh'cd project/ecs'
-//       sh'terraform init'
-//       sh'terraform plan'
-//       sh'terraform apply '
-//
-//      }
-//     }
+   }
+ }
