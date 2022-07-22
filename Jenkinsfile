@@ -16,7 +16,8 @@ pipeline {
                echo "creat_infra"
             }
         }
-
+}
+}
 
 //     when {
 //            expression { params.terraformwork == 'destroy_infra' }
