@@ -6,12 +6,12 @@ stages {
   sh 'terraform init'
    }
  }
-  stage('create plan') {
+  stage(' plan') {
   steps {
    sh 'terraform plan'
     }
   }
-   stage('create plan') {
+   stage('create apply') {
     steps {
      sh 'terraform plan -auto-approve'
       }
