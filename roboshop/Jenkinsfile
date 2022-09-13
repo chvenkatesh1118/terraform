@@ -1,0 +1,20 @@
+pipeline {
+agent any
+stages {
+ stage('create init') {
+ steps {
+  sh 'terraform init'
+   }
+ }
+  stage('create plan') {
+  steps {
+   sh 'terraform plan'
+    }
+  }
+   stage('create plan') {
+    steps {
+     sh 'terraform plan -auto-approve'
+      }
+    }
+}
+}
