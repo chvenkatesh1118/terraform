@@ -3,16 +3,19 @@ agent any
 stages {
  stage('create init') {
  steps {
+  sh 'cd roboshop'
   sh 'terraform init'
    }
  }
   stage(' plan') {
   steps {
+   sh 'cd roboshop'
    sh 'terraform plan'
     }
   }
    stage('create apply') {
     steps {
+     sh 'cd roboshop'
      sh 'terraform plan -auto-approve'
       }
     }
