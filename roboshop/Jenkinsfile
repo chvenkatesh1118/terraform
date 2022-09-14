@@ -1,23 +1,37 @@
 pipeline {
 agent any
+  parameters { choice(name: 'task',
+                      choices: ['create',
+                                 'destroy'],
+                      description: '') }
+
   stages{
-    stage('init'){
+   stage('create infra'){
+    when {
+                   expression {
+                      return params.task == 'create'
+                   }
+               }
       steps{
       sh 'cd roboshop; terraform init'
-      
-      }
-    }
-   stage('plan'){
-      steps{
       sh 'cd roboshop; terraform plan'
-      
-      }
-    }
-     stage('approve'){
-      steps{
       sh 'cd roboshop; terraform apply -auto-approve'
       
       }
     }
+
+    stage('destroy infra'){
+        when {
+                       expression {
+                          return params.task == 'destroy'
+                       }
+                   }
+          steps{
+
+          sh 'cd roboshop; terraform destroy -auto-approve'
+
+          }
+        }
+
   }
 }
