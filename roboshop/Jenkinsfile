@@ -15,7 +15,7 @@ agent any
     }
      stage('approve'){
       steps{
-      sh 'cd roboshop; terraform apply -autoaprrove'
+      sh 'cd roboshop; terraform apply -auto-aprrove'
       
       }
     }
