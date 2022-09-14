@@ -1,1 +1,23 @@
-
+pipeline {
+agen any
+  stages{
+    stage('init'){
+      steps{
+      sh 'cd roboshop; terraform init'
+      
+      }
+    }
+   stage('plan'){
+      steps{
+      sh 'cd roboshop; terraform plan'
+      
+      }
+    }
+     stage('approve'){
+      steps{
+      sh 'cd roboshop; terraform apply -autoaprrove'
+      
+      }
+    }
+  }
+}
