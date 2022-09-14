@@ -8,7 +8,8 @@ resource "aws_instance" "server2" {
   security_groups = ["sg-07f5cb83e6215f65c"]
   count = "1"
   instance_type = "t2.micro"
-}
+
 tags  {
   Name = "server2"
+}
 }
