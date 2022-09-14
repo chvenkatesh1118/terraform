@@ -9,6 +9,6 @@ resource "aws_instance" "server2" {
   count = "1"
   instance_type = "t2.micro"
 }
-tags = {
+tags  {
   Name = "server2"
 }
