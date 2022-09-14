@@ -4,19 +4,19 @@ stages {
  stage('create init') {
  steps {
   sh 'cd roboshop'
-  sh 'terraform init'
+  sh 'cd roboshop ;terraform init'
    }
  }
   stage(' plan') {
   steps {
    sh 'cd roboshop'
-   sh 'terraform plan'
+   sh 'cd roboshop;terraform plan'
     }
   }
    stage('create apply') {
     steps {
      sh 'cd roboshop'
-     sh 'terraform plan -auto-approve'
+     sh 'cd roboshop;terraform plan -auto-approve'
       }
     }
 }
