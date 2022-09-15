@@ -1,26 +1,30 @@
 pipeline {
 agent any
+      environment {
+         SERVICE = 'true'
+//           DB_ENGINE    = 'sqlite'
+      }
   parameters { choice(name: 'task',
                       choices: ['create',
                                  'destroy'],
                       description: '') }
 
   stages{
-   stage('create infra'){
+   stage('create ${SERVICE}'){
     when {
                    expression {
                       return params.task == 'create'
                    }
                }
       steps{
-      sh 'cd infra/ec2; terraform init'
-      sh 'cd infra/ec2; terraform plan'
-      sh 'cd infra/ec2; terraform apply -auto-approve'
+      sh 'cd infra/${SERVICE}; terraform init'
+      sh 'cd infra/${SERVICE}; terraform plan'
+      sh 'cd infra/${SERVICE}; terraform apply -auto-approve'
       
       }
     }
 
-    stage('destroy infra'){
+    stage('destroy ${SERVICE}'){
         when {
                        expression {
                           return params.task == 'destroy'
@@ -28,7 +32,7 @@ agent any
                    }
           steps{
 
-          sh 'cd infra/ec2; terraform destroy -auto-approve'
+          sh 'cd infra/${SERVICE}; terraform destroy -auto-approve'
 
           }
         }
