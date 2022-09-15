@@ -13,9 +13,9 @@ agent any
                    }
                }
       steps{
-      sh 'cd roboshop; terraform init'
-      sh 'cd roboshop; terraform plan'
-      sh 'cd roboshop; terraform apply -auto-approve'
+      sh 'cd ec2; terraform init'
+      sh 'cd ec2; terraform plan'
+      sh 'cd ec2; terraform apply -auto-approve'
       
       }
     }
@@ -28,7 +28,7 @@ agent any
                    }
           steps{
 
-          sh 'cd roboshop; terraform destroy -auto-approve'
+          sh 'cd ec2; terraform destroy -auto-approve'
 
           }
         }
