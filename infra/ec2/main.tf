@@ -19,3 +19,10 @@ resource "aws_instance" "server2" {
     Name = var.name
   }
 }
+output "privateip" {
+  value = aws_instance.server2.private_ip
+}
+
+output "publicip" {
+  value = aws_instance.server2.public_ip
+}
