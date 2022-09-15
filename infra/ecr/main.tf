@@ -1,14 +1,26 @@
+variable "name" {}
+
 provider "aws" {
+  alias  = "us_east_1"
   region = "us-east-1"
 }
 
-resource "aws_instance" "server2" {
-  ami             = "ami-0bb6af715826253bf"
-  subnet_id       = "subnet-003e1119782e07374"
-  security_groups = ["sg-07f5cb83e6215f65c"]
-  count           = "1"
-  instance_type   = "t2.micro"
+resource "aws_ecrpublic_repository" "ecrpublic" {
+  provider = aws.us_east_1
+
+  repository_name = var.name
+
+  catalog_data {
+    about_text        = "About Text"
+    architectures     = ["ARM"]
+    description       = "Description"
+
+    operating_systems = ["Linux"]
+    usage_text        = "Usage Text"
+  }
+
   tags = {
-    Name = "server2"
+    name = var.name
+
   }
 }
