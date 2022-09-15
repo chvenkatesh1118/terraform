@@ -1,7 +1,7 @@
 pipeline {
 agent any
       environment {
-         SERVICE = 'true'
+         SERVICE = 'ecr'
 //           DB_ENGINE    = 'sqlite'
       }
   parameters { choice(name: 'task',
