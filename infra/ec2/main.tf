@@ -7,7 +7,7 @@ resource "aws_instance" "server2" {
   subnet_id       = var.ec2_information.subnet
   security_groups = ["sg-07f5cb83e6215f65c"]
   count           = var.ec2_information.count
-  instance_type   = var.ec2_information.type
+  instance_type   = "t2.micro"
   tags = {
     Name = var.ec2_information.name
   }
