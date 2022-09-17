@@ -1,7 +1,6 @@
 name = "ec2-1"
 subnet = "subnet-003e1119782e07374"
 type = "t2.medium"
-number = "1"
 ami = "ami-0bb6af715826253bf"
 
 
