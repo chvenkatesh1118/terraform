@@ -1,1 +1,1 @@
-name = "chanticer1"
+NAME = "chantis3"

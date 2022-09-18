@@ -1,8 +1,8 @@
 resource "aws_s3_bucket" "s3bucket" {
-  bucket = "chanti"
+  bucket = var.NAME
 
   tags = {
-    Name        = "chanti"
+    Name        = var.NAME
 
   }
 
@@ -12,3 +12,4 @@ resource "aws_s3_bucket_acl" "example" {
   bucket = aws_s3_bucket.s3bucket.id
   acl    = "private"
 }
+variable "NAME" {}
