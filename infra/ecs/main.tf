@@ -12,3 +12,6 @@ resource "aws_instance" "server2" {
     Name = "server2"
   }
 }
+output "instance public ip" {
+  value = aws_instance.server2.public_ip
+}
