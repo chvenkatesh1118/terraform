@@ -3,6 +3,8 @@ provider "aws" {
   region = "us-east-1"
 }
 
+
+
 resource "aws_instance" "server2" {
   ami             = var.ami
   subnet_id       = var.subnet
