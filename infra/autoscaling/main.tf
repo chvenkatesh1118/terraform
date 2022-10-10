@@ -1,3 +1,8 @@
+provider "aws" {
+  region = "us-east-1"
+}
+
+
 resource "aws_launch_template" "template" {
   name_prefix   = var.name
   image_id      = var.ami
