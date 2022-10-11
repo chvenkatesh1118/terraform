@@ -1,21 +1,24 @@
 pipeline {
 agent any
       environment {
-         SERVICE = 'autoscaling'
-//           DB_ENGINE    = 'sqlite'
+         SERVICE = 'ec2'
+
       }
+
   parameters { choice(name: 'task',
                       choices: ['create',
                                  'destroy'],
                       description: '') }
 
+
   stages{
    stage('create ${SERVICE}'){
+
     when {
-                   expression {
-                      return params.task == 'create'
+                       expression {
+                          return params.task == 'create'
+                       }
                    }
-               }
       steps{
       sh 'cd infra/${SERVICE}; terraform init'
       sh 'cd infra/${SERVICE}; terraform plan'
