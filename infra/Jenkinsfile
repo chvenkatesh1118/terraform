@@ -19,7 +19,7 @@ agent any
 
    when {
                           expression {
-                             return params.service == 'ecr'
+                             return params.service == 'ec2'
                           }
                       }
 
@@ -29,14 +29,14 @@ agent any
                        }
                    }
       steps{
-      sh 'cd infra/ecr; terraform init'
-      sh 'cd infra/ecr; terraform plan'
-      sh 'cd infra/ecr; terraform apply -auto-approve'
-      
+      sh 'cd infra/ec2; terraform init'
+      sh 'cd infra/${SERVICE}; terraform plan'
+      sh 'cd infra/${SERVICE}; terraform apply -auto-approve'
+
       }
     }
 
-    stage('destroy '){
+    stage('destroy ${SERVICE}'){
         when {
                        expression {
                           return params.task == 'destroy'
@@ -44,43 +44,45 @@ agent any
                    }
           steps{
 
-          sh 'cd infra/ecr; terraform destroy -auto-approve'
+          sh 'cd infra/${SERVICE}; terraform destroy -auto-approve'
 
           }
         }
 
-        when {
-                                  expression {
-                                     return params.service == 'ec2'
-                                  }
-                              }
+      //////////////////////////////////////////////////////
+      stage('create '){
 
-            when {
-                               expression {
-                                  return params.task == 'create'
-                               }
-                           }
-              steps{
-              sh 'cd infra/ec2; terraform init'
-              sh 'cd infra/ec2; terraform plan'
-              sh 'cd infra/ec2; terraform apply -auto-approve'
+         when {
+                                expression {
+                                   return params.service == 'ecr'
+                                }
+                            }
 
-              }
+          when {
+                             expression {
+                                return params.task == 'create'
+                             }
+                         }
+            steps{
+            sh 'cd infra/ecr; terraform init'
+            sh 'cd infra/ecr; terraform plan'
+            sh 'cd infra/ecr; terraform apply -auto-approve'
+
             }
+          }
 
-            stage('destroy '){
-                when {
-                               expression {
-                                  return params.task == 'destroy'
-                               }
-                           }
-                  steps{
+          stage('destroy '){
+              when {
+                             expression {
+                                return params.task == 'destroy'
+                             }
+                         }
+                steps{
 
-                  sh 'cd infra/ec2; terraform destroy -auto-approve'
+                sh 'cd infra/ecr; terraform destroy -auto-approve'
 
-                  }
                 }
+              }
 
   }
-}
 }
