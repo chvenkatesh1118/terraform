@@ -1,9 +1,9 @@
 pipeline {
 agent any
-//       environment {
-//          SERVICE = 'ec2'
-//
-//       }
+      environment {
+         SERVICE = 'ec2'
+
+      }
  parameters { choice(name: 'service',
                        choices: ['ec2',
                                   'ecr'],
@@ -12,6 +12,11 @@ agent any
                       choices: ['create',
                                  'destroy'],
                       description: 'task') }
+
+         environment {
+                  SERVICE = ${}
+
+               }
 
 
   stages{
