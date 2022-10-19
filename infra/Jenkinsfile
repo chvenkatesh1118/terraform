@@ -1,9 +1,9 @@
 pipeline {
 agent any
-      environment {
-         SERVICE = 'ec2'
-
-      }
+//       environment {
+//          SERVICE = 'ec2'
+//
+//       }
  parameters { choice(name: 'service',
                        choices: ['ec2',
                                   'ecr'],
@@ -13,14 +13,14 @@ agent any
                                  'destroy'],
                       description: 'task') }
 
-         environment {
-                  SERVICE = ${}
-
-               }
+//          environment {
+//                   SERVICE = ${}
+//
+//                }
 
 
   stages{
-   stage('create ec2 '){
+   stage('create ECC2 '){
 
    when {
                           expression {
@@ -78,7 +78,7 @@ agent any
                       }
              steps{
 
-             sh 'cd infra/ecr; terraform destroy -auto-approve'
+             sh 'cd infra/ecr; terraform destroy'
 
              }
            }
