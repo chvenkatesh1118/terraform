@@ -84,9 +84,11 @@
 //            }
 //   }
 // }
+
+
  pipeline {
   agent any
- }
+
   stages {
    stage('craete ec2') {
     step {
@@ -97,5 +99,5 @@
      }
 
    }
-
+ }
   }
