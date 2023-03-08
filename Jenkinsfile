@@ -93,7 +93,7 @@
    stage('create ec2') {
     steps {
     sh 'pwd'
-     sh 'cd terraform/infra/ec2'
+     sh 'cd infra/ec2'
      sh 'terraform init'
      sh 'terraform plan'
      sh 'terraform apply'
