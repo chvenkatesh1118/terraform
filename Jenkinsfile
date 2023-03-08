@@ -90,8 +90,9 @@
   agent any
 
   stages {
-   stage('craete ec2') {
+   stage('create ec2') {
     steps {
+    sh 'pwd'
      sh 'cd terraform/infra/ec2'
      sh 'terraform init'
      sh 'terraform plan'
