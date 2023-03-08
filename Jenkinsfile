@@ -91,7 +91,7 @@
 
   stages {
    stage('craete ec2') {
-    step {
+    steps {
      sh 'cd terraform/infra/ec2'
      sh 'terraform init'
      sh 'terraform plan'
