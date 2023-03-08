@@ -88,8 +88,8 @@
   agent any
  }
   stages {
-   stage(craete ec2) {
-    setep {
+   stage('craete ec2') {
+    step {
      sh 'cd terraform/infra/ec2'
      sh 'terraform init'
      sh 'terraform plan'
